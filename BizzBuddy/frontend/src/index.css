@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bgPrimary: #05070f;
+  --color-bgSecondary: #0b1020;
+  --color-card: rgba(255, 255, 255, 0.04);
+
+  --color-accent: #5b8cff;
+  --color-danger: #ff4d4d;
+  --color-warning: #ffb020;
+}
+
+body {
+  @apply text-white font-sans;
+  background:
+    radial-gradient(circle at top right, #1a2b55 0%, transparent 40%),
+    radial-gradient(circle at bottom left, #0f1d3a 0%, transparent 40%), #05070f;
+}
+
+.card-ui {
+  @apply bg-card backdrop-blur-xl border border-white/10 rounded-2xl p-5 shadow-lg shadow-black/20;
+}
+@keyframes floatX {
+  0% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(30px) translateY(-20px) rotate(2deg);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes floatY {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-x {
+  animation: floatX 12s ease-in-out infinite;
+}
+
+.float-y {
+  animation: floatY 8s ease-in-out infinite;
+}
